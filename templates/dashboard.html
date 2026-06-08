@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Doctor Dashboard</title>
+    <form method="GET">
+
+        <input type="text"
+               name="search"
+               placeholder="Search Doctor">
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+    <br>
+    <div class="card">
+
+        <h2>Total Doctors</h2>
+
+        <h1>{{ total_doctors }}</h1>
+
+    </div>
+    {% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+
+        {% for message in messages %}
+
+            <div class="success-box"
+            id="success-message">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+{% endwith %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <h1>Doctor Shift & Duty Roster System</h1>
+
+    <h2>Dashboard</h2>
+
+    <hr>
+
+    <!-- LEAVE REQUEST SECTION -->
+
+    <div class="section-box">
+
+        <h2>Leave Request</h2>
+
+        <form action="/submit_leave" method="POST">
+
+            <label>Doctor Name</label>
+
+            <br><br>
+
+            <input type="text"
+                   name="doctor_name"
+                   required>
+
+            <br><br>
+
+            <label>Department</label>
+
+            <br><br>
+
+            <input type="text"
+                   name="department"
+                   required>
+
+            <br><br>
+
+            <label>Shift</label>
+
+            <br><br>
+
+            <select name="shift">
+
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Evening</option>
+                <option>Night</option>
+
+            </select>
+
+            <br><br>
+
+            <label>Leave Date</label>
+
+            <br><br>
+
+            <input type="date"
+                   name="leave_date"
+                   required>
+
+            <br><br>
+
+            <label>Reason</label>
+
+            <br><br>
+
+            <textarea name="reason"
+                      required></textarea>
+
+            <br><br>
+
+            <button type="submit">
+
+                Submit Leave Request
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <br>
+
+    <!-- ADD DOCTOR SECTION -->
+
+    <div class="section-box">
+
+        <h2>Add Doctor</h2>
+
+        <form action="/save_doctor" method="POST">
+
+            <label>Doctor Name</label>
+            <br><br>
+
+            <input type="text" name="doctor_name">
+
+            <br><br>
+
+            <label>Department</label>
+            <br><br>
+
+            <input type="text" name="department">
+            <br><br>
+
+<label>Shift</label>
+
+<br><br>
+
+<select name="shift">
+
+    <option>Morning</option>
+    <option>Afternoon</option>
+    <option>Evening</option>
+    <option>Night</option>
+
+</select>
+
+            <br><br>
+
+            <button type="submit">
+                Add Doctor
+            </button>
+
+        </form>
+        <br><br>
+
+<div class="section-box">
+
+    <h2>Doctor List</h2>
+
+    <table border="1" cellpadding="10" width="100%">
+s
+        <tr>
+            <th>ID</th>
+            <th>Doctor Name</th>
+            <th>Department</th>
+            <th>Shift</th>
+            <th>Status</th>
+            <th>Emergency Available</th>
+            <th>Action</th>
+        </tr>
+
+        {% for doctor in doctors %}
+
+        <tr>
+
+            <td>{{ doctor[0] }}</td>
+            <td>{{ doctor[1] }}</td>
+            <td>{{ doctor[2] }}</td>
+            <td>{{ doctor[3] }}</td>
+            <td>{{ doctor[4] }}</td>
+            <td>{{ doctor[6] }}</td>
+            <td>
+
+                <a href="/delete_doctor/{{ doctor[0] }}">
+
+                    <button>Inactive</button>
+
+                </a>
+            </td>
+
+        </tr>
+             
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+    </div>
+
+</div>
+<script>
+
+setTimeout(function(){
+
+    let message = document.getElementById("success-message");
+
+    if(message){
+        message.style.display = "none";
+    }
+
+}, 3000);
+
+</script>
+</body>
+
+</html>

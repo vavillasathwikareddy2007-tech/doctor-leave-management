@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Doctor Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <h1>Doctor Login</h1>
+
+        <form action="/dashboard">
+
+            <label>Doctor ID</label>
+            <br>
+
+            <input type="text" placeholder="Enter Doctor ID">
+
+            <br><br>
+
+            <label>Password</label>
+            <br>
+
+            <input type="password" placeholder="Enter Password">
+
+            <br><br>
+
+            <button type="submit">Login</button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

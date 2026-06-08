@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <h2>Emergency Alert Sent To All Doctors</h2>
+    <h2>Emergency Information</h2>
+
+    <p>
+    Emergency Type: {{ emergency_type }}
+    </p>
+
+    <p>
+    Department: {{ department }}
+    </p>
+
+    <p>
+    Shift: {{ shift }}
+    </p>
+    <title>Emergency Doctors</title>
+
+</head>
+
+<body>
+
+<h1>Available Doctors 🚨</h1>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Shift</th>
+        <th>Availability</th>
+
+    </tr>
+
+    {% for doctor in doctors %}
+
+    <tr>
+
+        <td>{{ doctor[0] }}</td>
+        <td>
+
+    <a href="/accept_emergency/{{ doctor[0] }}">
+
+        <button>
+            Accept Emergency
+        </button>
+
+    </a>
+
+</td>
+        <td>{{ doctor[1] }}</td>
+        <td>
+
+    <a href="/accept_emergency/{{ doctor[0] }}">
+
+        <button>
+            Accept Emergency
+        </button>
+
+    </a>
+
+</td>
+        <td>{{ doctor[2] }}</td>
+        <td>
+
+    <a href="/accept_emergency/{{ doctor[0] }}">
+
+        <button>
+            Accept Emergency
+        </button>
+
+    </a>
+
+</td>
+        <td>{{ doctor[3] }}</td>
+        <td>
+
+    <a href="/accept_emergency/{{ doctor[0] }}">
+
+        <button>
+            Accept Emergency
+        </button>
+
+    </a>
+
+</td>
+        <td>{{ doctor[5] }}</td>
+        <td>
+
+    <a href="/accept_emergency/{{ doctor[0] }}">
+
+        <button>
+            Accept Emergency
+        </button>
+
+    </a>
+
+</td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+<h2>Doctors On Leave</h2>
+
+<table border="1">
+
+<tr>
+
+    <th>ID</th>
+    <th>Name</th>
+    <th>Department</th>
+    <th>Shift</th>
+    <th>Action</th>
+
+</tr>
+
+{% for leave in leave_doctors %}
+
+<tr>
+
+    <td>{{ leave[0] }}</td>
+    <td>{{ leave[1] }}</td>
+    <td>{{ leave[2] }}</td>
+    <td>{{ leave[3] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+</body>
+
+</html>

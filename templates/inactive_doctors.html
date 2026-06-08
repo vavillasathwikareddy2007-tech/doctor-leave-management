@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Inactive Doctors</title>
+
+</head>
+
+<body>
+
+<h1>Inactive Doctors</h1>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Shift</th>
+        <th>Status</th>
+        <th>Action</th>
+
+    </tr>
+
+    {% for doctor in doctors %}
+
+    <tr>
+
+        <td>{{ doctor[0] }}</td>
+        <td>{{ doctor[1] }}</td>
+        <td>{{ doctor[2] }}</td>
+        <td>{{ doctor[3] }}</td>
+        <td>{{ doctor[4] }}</td>
+
+        <td>
+
+            <a href="/restore_doctor/{{ doctor[0] }}">
+
+                <button>Restore</button>
+
+            </a>
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+</body>
+
+</html>

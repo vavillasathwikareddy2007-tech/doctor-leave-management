@@ -1,0 +1,66 @@
+body{
+    background-color: #dbeafe;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container{
+    width: 600px;
+    margin: 30px auto;
+}
+
+h1{
+    text-align: center;
+    color: darkblue;
+}
+
+h2{
+    color: darkblue;
+}
+
+.section-box{
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 10px;
+}
+
+textarea{
+    height: 100px;
+}
+
+button{
+    background-color: darkblue;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: blue;
+}
+.success-box{
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.card{
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px gray;
+}

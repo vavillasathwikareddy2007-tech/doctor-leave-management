@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Admin Panel</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <h1>Hospital Admin Panel</h1>
+
+    <div class="section-box">
+
+        <h2>Quick Access</h2>
+
+        <br>
+
+        <a href="/dashboard">
+            <button>Doctor Dashboard</button>
+        </a>
+
+        <br><br>
+
+        <a href="/roster">
+            <button>View Roster</button>
+        </a>
+
+        <br><br>
+
+        <a href="/approve_leave">
+            <button>Approve Leaves</button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

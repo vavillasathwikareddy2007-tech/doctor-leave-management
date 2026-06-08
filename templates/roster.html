@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Weekly Duty Roster</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <h1>Weekly Duty Roster</h1>
+
+    <div class="section-box">
+
+        <table border="1" cellpadding="10" width="100%">
+
+            <tr>
+
+                <th>ID</th>
+                <th>Doctor Name</th>
+                <th>Department</th>
+                <th>Shift</th>
+
+            </tr>
+
+            {% for doctor in doctors %}
+
+            <tr>
+
+                <td>{{ doctor[0] }}</td>
+                <td>{{ doctor[1] }}</td>
+                <td>{{ doctor[2] }}</td>
+                <td>{{ doctor[3] }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

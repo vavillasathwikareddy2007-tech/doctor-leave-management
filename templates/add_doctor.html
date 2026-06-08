@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Add Doctor</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard-box">
+
+    <h1>Add Doctor</h1>
+
+    <form action="/save_doctor" method="POST">
+
+        <label>Doctor Name</label>
+        <br><br>
+
+        <input type="text" name="doctor_name">
+
+        <br><br>
+
+        <label>Department</label>
+        <br><br>
+
+        <input type="text" name="department">
+
+        <br><br>
+
+        <label>Shift</label>
+        <br><br>
+
+        <input type="text" name="shift">
+
+        <br><br>
+
+        <button type="submit">Add Doctor</button>
+
+    </form>
+
+    <hr>
+
+    <h2>Doctor List</h2>
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Shift</th>
+            <th>Status</th>
+            <th>Action</th>
+            <th>Emergency_available</th>
+        </tr>
+
+        {% for doctor in doctors %}
+
+        <tr>
+
+            <td>{{ doctor[0] }}</td>
+            <td>{{ doctor[1] }}</td>
+            <td>{{ doctor[2] }}</td>
+            <td>{{ doctor[3] }}</td>
+            <td>{{ doctor[4] }}</td>
+            <td>{{ doctor[5] }}</td>
+            <td>{{ doctor[6] }}</td>
+            
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+
+</html>
