@@ -189,7 +189,7 @@ def submit_leave():
     return redirect('/dashboard')
 
 #ADD DOCTOR
-@app.route('/add_doctor',methods=['POST'])
+@app.route('/add_doctor')
 def add_doctor():
 
     conn = sqlite3.connect('database.db')
